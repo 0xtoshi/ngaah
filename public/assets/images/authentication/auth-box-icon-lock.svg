@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="261.009" height="203.007" viewBox="0 0 270 210">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #7a4bd6;
+      }
+
+      .cls-1, .cls-10, .cls-11, .cls-12 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-11, .cls-3 {
+        fill: #08d26f;
+      }
+
+      .cls-4 {
+        fill: #ff5252;
+      }
+
+      .cls-5 {
+        fill: #81cef6;
+      }
+
+      .cls-6 {
+        fill: #f2f2f2;
+      }
+
+      .cls-7 {
+        fill: #ff0;
+      }
+
+      .cls-8 {
+        fill: #69f0ae;
+      }
+
+      .cls-9 {
+        fill: #8b50ff;
+      }
+
+      .cls-10 {
+        fill: #fc4f68;
+      }
+
+      .cls-12 {
+        fill: none;
+        stroke: #24a365;
+        stroke-width: 1px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M-0.031,30.97L229.324,0.527l23.707,178.5L23.675,209.473Z"/>
+  <rect class="cls-2" x="10" y="17" width="235" height="179"/>
+  <rect class="cls-3" x="57" y="128" width="14" height="10"/>
+  <rect id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-4" x="57" y="145" width="14" height="10"/>
+  <rect id="Rectangle_2_copy_2" data-name="Rectangle 2 copy 2" class="cls-5" x="57" y="162" width="14" height="10"/>
+  <rect id="Rectangle_3_copy" data-name="Rectangle 3 copy" class="cls-6" x="21" y="42" width="210" height="62"/>
+  <rect id="Rectangle_3_copy_2" data-name="Rectangle 3 copy 2" class="cls-6" x="11" y="17" width="234" height="10"/>
+  <circle class="cls-4" cx="16.5" cy="21.5" r="2.5"/>
+  <circle id="Ellipse_2_copy" data-name="Ellipse 2 copy" class="cls-7" cx="23.5" cy="21.328" r="2.25"/>
+  <ellipse id="Ellipse_2_copy_2" data-name="Ellipse 2 copy 2" class="cls-8" cx="30.75" cy="21.328" rx="2.25" ry="2.328"/>
+  <rect class="cls-9" x="23" y="44" width="206" height="58"/>
+  <ellipse class="cls-2" cx="132" cy="137" rx="17" ry="23"/>
+  <path class="cls-10" d="M159.379,104.305H153.6V92.856c0-12.92-10.108-23.66-22.786-23.856A23.382,23.382,0,0,0,107.4,92.363c0,0.058,0,.117,0,0.175v11.767h-5.771A9.749,9.749,0,0,0,92,114.114v47.077A9.749,9.749,0,0,0,101.626,171h57.753A9.745,9.745,0,0,0,169,161.191V114.114A9.745,9.745,0,0,0,159.379,104.305Zm-25.5,30.6v16.86a3.493,3.493,0,0,1-3.2,3.533,3.4,3.4,0,0,1-3.531-3.277c0-.053,0-0.106,0-0.16V134.9a7.9,7.9,0,0,1-3.538-10.47,7.62,7.62,0,0,1,10.274-3.606,7.9,7.9,0,0,1,3.538,10.47,7.755,7.755,0,0,1-3.538,3.606v0.009Zm12.994-30.6H114.132V92.538a16.364,16.364,0,1,1,32.723,0Z"/>
+  <path class="cls-11" d="M248.675,202.823s-0.877-20.392,10.368-23.191,14.559-15.676,3.144-15.815-14.214,14.246-14.214,14.246-1.147-15.975,12.943-19.937,9.276-27.265-5.712-17.7-13.559,34.484-13.559,34.484,7.282-19.147-6.679-33.829-24.943,7.031-12.628,18.988S235.961,182.5,235.961,182.5s-4.614-6.59-15.184-5.043-5.326,17.761,10.134,13.9,7.6,12.008,7.6,12.008Z"/>
+  <path class="cls-12" d="M244,190a27.812,27.812,0,0,1,15-17"/>
+  <path class="cls-12" d="M244,188s-1.823-22.516,11-37"/>
+  <path class="cls-12" d="M228,148s9.377,18.084,11,30,2,12,2,12"/>
+  <path class="cls-12" d="M226,184s10.777,0.684,15,6"/>
+</svg>

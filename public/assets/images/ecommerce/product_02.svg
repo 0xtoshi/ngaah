@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fba112;
+      }
+
+      .cls-2 {
+        fill: #ee3a3a;
+      }
+
+      .cls-3 {
+        fill: #b11111;
+      }
+
+      .cls-3, .cls-4 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        fill: #fa8383;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="25" cy="25" r="25"/>
+  <rect class="cls-2" x="20" y="22" width="15" height="14"/>
+  <path id="Rectangle_7_copy" data-name="Rectangle 7 copy" class="cls-3" d="M14.325,17.877l15,0.045,5.654,4.1-15-.045Z"/>
+  <path id="Shape_15_copy" data-name="Shape 15 copy" class="cls-4" d="M13.516,17.129l6.452,5.161V36.484l-6.452-5.161"/>
+</svg>

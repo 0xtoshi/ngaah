@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="365" height="149" viewBox="0 0 365 149">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #8b50ff;
+        fill-rule: evenodd;
+        opacity: 0.15;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M0,22S30.4-.741,113,32s122.518,0.441,163-18c15.936-7.26,48.4-25.74,89,0V149H0V22Z"/>
+  <path id="Shape_9_copy" data-name="Shape 9 copy" class="cls-1" d="M0,149V20S77.4,69.882,160,37.224,312.1,4.56,365,38.216V149H0Z"/>
+</svg>

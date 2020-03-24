@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fba112;
+      }
+
+      .cls-2 {
+        fill: #3dbf7d;
+      }
+
+      .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: #1d9357;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="25" cy="25" r="25"/>
+  <path id="Polygon_1" data-name="Polygon 1" class="cls-2" d="M35.406,30.738L25.22,36.619,15.034,30.738V18.976L25.22,13.1l10.186,5.881V30.738Z"/>
+  <path class="cls-3" d="M25.806,37.1v-11.9l9.677,5.451Z"/>
+  <path id="Shape_16_copy" data-name="Shape 16 copy" class="cls-3" d="M25.7,13.375L25.585,25.226,15.294,19.1Z"/>
+</svg>

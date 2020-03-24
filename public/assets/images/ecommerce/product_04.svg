@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fba112;
+      }
+
+      .cls-2 {
+        fill: #1a6f9b;
+      }
+
+      .cls-3 {
+        fill: #6dc8f8;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="25" cy="25" r="25"/>
+  <circle id="Ellipse_11_copy" data-name="Ellipse 11 copy" class="cls-2" cx="27.391" cy="24.219" r="8.859"/>
+  <circle class="cls-3" cx="23.391" cy="28.219" r="8.859"/>
+</svg>
