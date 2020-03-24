@@ -29,3 +29,13 @@ Route.get('/request/whoami','UserController.whoami')
 */
 
 Route.get('/account/login','UiController.login')
+Route.get('/account/register','UiController.register')
+
+
+/*
+|
+|
+*/
+
+Route.get('/admin/dashboard','AdminController.Dashboard')
+Route.get('/data/topuser','AdminController.getTopUser')

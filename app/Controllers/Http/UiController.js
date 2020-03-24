@@ -8,6 +8,14 @@ class UiController {
 
     }
 
+    async register({view}){
+
+        return view.render('v1.register')
+
+    }
+
+
+
 }
 
 module.exports = UiController

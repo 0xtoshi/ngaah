@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Theta is a premium responsive admin dashboard template with great features.">
+    <meta name="keywords" content="responsive, admin template, dashboard template, bootstrap 4, ui kits, ecommerce, web app, crm, cms, html, sass support, scss">
+    <meta name="author" content="Themesbox">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Register - Sosmedpanel</title>
+    <!-- Fevicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <!-- Start css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+    <!-- End css -->
+</head>
+<body class="vertical-layout">
+    <!-- Start Containerbar -->
+    <div id="containerbar" class="containerbar authenticate-bg">
+        <!-- Start Container -->
+        <div class="container">
+            <div class="auth-box login-box">
+                <!-- Start row -->
+                <div class="row no-gutters align-items-center justify-content-center">                    
+                    <!-- Start col -->
+                    
+                    <!-- Start end -->
+                    <!-- Start col -->
+                    <div class="col-md-6 col-lg-5">
+                        <!-- Start Auth Box -->
+                        <div class="auth-box-right">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form id="register" action="#">
+                                        <h4 class="text-primary mb-4">Register!</h4>
+                                        <div id="alert"></div>
+                                        <div class="form-group">
+                                            <input type="text" name="username" class="form-control" id="username" placeholder="Enter Username here" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="form-control" id="email" placeholder="Enter E-Mail here" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password here" required>
+                                        </div>
+                                                             
+                                      <button type="submit" class="btn btn-success btn-lg btn-block font-18">Register Now</button>
+                                    </form>
+                                   
+                                  
+                                    <p class="mb-0 mt-3">Already have account? <a href="/account/login">Login</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Auth Box -->
+                    </div>
+                    <!-- End col -->
+                </div>
+                <!-- End row -->
+            </div>
+        </div>
+        <!-- End Container -->
+    </div>
+    <!-- End Containerbar -->
+    <!-- Start js -->        
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/modernizr.min.js"></script>
+    <script src="/assets/js/detect.js"></script>
+    <script src="/assets/js/jquery.slimscroll.js"></script>
+
+    <script>
+
+
+    $(document).ready(function(){
+
+
+        $('form[id=register]').submit(function(e){
+
+            e.preventDefault();
+
+            var form = $('#register').serialize();
+            
+            $('div[id=alert]').html('<div class="alert alert-primary">Processing....</div>');
+
+            $.ajax({
+
+                type : "POST",
+                url : "/request/register",
+                data : form,
+                success : function(data){
+
+                    $('div[id=alert]').empty();
+                    $.each(data,function(key,val){
+                        $('div[id=alert]').append('<div class="alert alert-success">'+val.message+'</div> <meta http-equiv="refresh" content="3; url=/account/login">');
+                    });
+                    
+                },
+
+                error : function(data){
+                    var ngaah = JSON.parse(data.responseText);
+                    $('div[id=alert]').empty();
+                    $.each(ngaah,function(key,val){
+                        $('div[id=alert]').append('<div class="alert alert-danger">'+val.message+'</div>');
+                    });
+                }
+            });
+        });
+    });
+    </script>
+    <!-- End js -->
+</body>
+</html>

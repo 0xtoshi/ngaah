@@ -1,0 +1,451 @@
+@include('v1.head')
+
+
+
+<body class="vertical-layout">
+    <!-- Start Infobar Notifications Sidebar -->
+    
+    
+    <!-- End Infobar Setting Sidebar -->
+    <!-- Start Containerbar -->
+    <div id="containerbar">
+        <!-- Start Leftbar -->
+        <div class="leftbar">
+            <!-- Start Sidebar -->
+            <div class="sidebar">
+                <!-- Start Logobar -->
+                <div class="logobar">
+                    <a href="index.html" class="logo logo-large"><img src="/assets/images/logo.svg" class="img-fluid" alt="logo"></a>
+                    <a href="index.html" class="logo logo-small"><img src="/assets/images/small_logo.svg" class="img-fluid" alt="logo"></a>
+                </div>
+                <!-- End Logobar -->
+                <!-- Start Profilebar -->
+                <div class="profilebar text-center">
+                    <img src="/assets/images/users/profile.svg" class="img-fluid" alt="profile">
+                    <div class="profilename">
+                      <h5 class="text-white"></h5>
+                
+                    </div>
+                    <div class="userbox">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item"><a href="#" class="profile-icon"><img src="/assets/images/svg-icon/user.svg" class="img-fluid" alt="user"></a></li>
+                            <li class="list-inline-item"><a href="#" class="profile-icon"><img src="/assets/images/svg-icon/email.svg" class="img-fluid" alt="email"></a></li>
+                            <li class="list-inline-item"><a href="#" class="profile-icon"><img src="/assets/images/svg-icon/logout.svg" class="img-fluid" alt="logout"></a></li>
+                        </ul>
+                      </div>
+                </div>
+                <!-- End Profilebar -->
+                <!-- Start Navigationbar -->
+                <div class="navigationbar">
+                    <ul class="vertical-menu">
+                        <li class="vertical-header">Main</li>
+                        <li>
+                            <a href="javaScript:void();">
+                                <img src="/assets/images/svg-icon/dashboard.svg" class="img-fluid" alt="layouts"><span>Admin</span><i class="feather icon-chevron-right pull-right"></i>
+                            </a>
+                            <ul class="vertical-submenu">
+                                <li><a href="admin/dashboard"><i class="mdi mdi-circle"></i>Dashboard</a></li> 
+                                <li><a href="admin/userman"><i class="mdi mdi-circle"></i>Userman</a></li>
+                                <li><a href="admin/serviceman"><i class="mdi mdi-circle"></i>Serviceman</a></li>
+                                <li><a href="admin/orderman"><i class="mdi mdi-circle"></i>Orderman</a></li>
+                                <li><a href="admin/balanceman"><i class="mdi mdi-circle"></i>Balanceman</a></li>
+                                <li><a href="admin/notificationman"><i class="mdi mdi-circle"></i>Notificationman</a></li> 
+                            </ul>
+                        </li>                                              
+                    </ul>
+                </div>
+                <!-- End Navigationbar -->
+            </div>
+            <!-- End Sidebar -->
+        </div>
+        <!-- End Leftbar -->
+        <!-- Start Rightbar -->
+        <div class="rightbar">
+            <!-- Start Topbar Mobile -->
+            <div class="topbar-mobile">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="mobile-logobar">
+                            <a href="index.html" class="mobile-logo"><img src="/assets/images/logo.svg" class="img-fluid" alt="logo"></a>
+                        </div>
+                        <div class="mobile-togglebar">
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item">
+                                    <div class="topbar-toggle-icon">
+                                        <a class="topbar-toggle-hamburger" href="javascript:void();">
+                                            <img src="/assets/images/svg-icon/horizontal.svg" class="img-fluid menu-hamburger-horizontal" alt="horizontal">
+                                            <img src="/assets/images/svg-icon/verticle.svg" class="img-fluid menu-hamburger-vertical" alt="verticle">
+                                         </a>
+                                     </div>
+                                </li>
+                                <li class="list-inline-item">
+                                    <div class="menubar">
+                                        <a class="menu-hamburger" href="javascript:void();">
+                                            <img src="/assets/images/svg-icon/collapse.svg" class="img-fluid menu-hamburger-collapse" alt="collapse">
+                                            <img src="/assets/images/svg-icon/close.svg" class="img-fluid menu-hamburger-close" alt="close">
+                                         </a>
+                                     </div>
+                                </li>                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start Topbar -->
+            <div class="topbar">
+                <!-- Start row -->
+                <div class="row align-items-center">
+                    <!-- Start col -->
+                    <div class="col-md-12 align-self-center">
+                        <div class="togglebar">
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item">
+                                    <div class="menubar">
+                                        <a class="menu-hamburger" href="javascript:void();">
+                                           <img src="/assets/images/svg-icon/collapse.svg" class="img-fluid menu-hamburger-collapse" alt="collapse">
+                                           <img src="/assets/images/svg-icon/close.svg" class="img-fluid menu-hamburger-close" alt="close">
+                                         </a>
+                                     </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="infobar">
+                            <ul class="list-inline mb-0">
+                            
+                                <li class="list-inline-item">
+                                    <div class="languagebar">
+                                        <div class="dropdown">
+                                          <a class="dropdown-toggle" href="#" role="button" id="languagelink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag flag-icon-us flag-icon-squared"></i></a>
+                                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languagelink">
+                                            <a class="dropdown-item" href="#"><i class="flag flag-icon-us flag-icon-squared"></i>English</a>
+                                          </div>
+                                        </div>
+                                    </div>                                   
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End col -->
+                </div> 
+                <!-- End row -->
+            </div>
+            <!-- End Topbar -->
+            <!-- Start Breadcrumbbar -->                    
+            <div class="breadcrumbbar">
+                <div class="row align-items-center">
+                    <div class="col-md-8 col-lg-8">
+                        
+                        <div class="breadcrumb-list">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                
+                            </ol>
+                        </div>
+                    </div>
+                    
+                </div>          
+            </div>
+            <!-- End Breadcrumbbar -->
+            <!-- Start Contentbar -->    
+            <div class="contentbar">                
+                <!-- Start row -->
+                <div class="row">
+                <!-- Start col -->
+                <div class="col-md-12 col-lg-6 col-xl-4">
+                        <div class="card m-b-30">
+                            <div class="card-header">                                
+                                <div class="row align-items-center">
+                                    <div class="col-6">
+                                        <h5 class="card-title mb-0">Used Balance</h5>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="card-body text-center pb-0 px-0">
+                            <span>Top user used balance</span>
+                            <canvas height="150" id="top-user" class="chartjs-chart mt-4"></canvas>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- End col -->
+                    <!-- Start col -->
+                    <div class="col-md-12 col-lg-6 col-xl-4">
+                        <div class="card m-b-30">
+                            <div class="card-header">                                
+                                <div class="row align-items-center">
+                                    <div class="col-6">
+                                        <h5 class="card-title mb-0">User Balance</h5>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="card-body text-center pb-0 px-0">
+                            <span>Top user balance</span>
+                            <canvas height="150" id="top-user-balance" class="chartjs-chart mt-4"></canvas>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- End col -->                    
+                    <!-- Start col -->
+                    <div class="col-md-12 col-lg-6 col-xl-4">
+                        <div class="card m-b-30">
+                            <div class="card-header">                                
+                                <div class="row align-items-center">
+                                    <div class="col-6">
+                                        <h5 class="card-title mb-0">Order History</h5>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="card-body text-center pb-0 px-0">
+                            <span>User daily order history </span>
+                            <canvas height="150" id="order-history" class="chartjs-chart mt-4"></canvas>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- End col -->
+                    <!-- Start col -->
+                    <div class="col-md-12 col-lg-6 col-xl-3">
+                        <div class="card m-b-30">
+                            <div class="card-header">                                
+                                <div class="row align-items-center">
+                                    <div class="col-6">
+                                        <h5 class="card-title mb-0">Wallet</h5>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul class="list-inline-group text-right mb-0 pl-0">
+                                            <li class="list-inline-item mr-0 font-12">Update <a onclick="get_balance();"><i class="feather icon-refresh-cw font-16 text-primary ml-1"></i></a></li>
+                                        </ul>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row align-items-center pb-3">
+                                    <div class="col-6">
+                                        <p class="mb-2">Balance</p>
+                                        <h5><span id="balance"></span></h5>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <button onclick="get_balance();" class="btn btn-primary">Refresh</button>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                <div class="col-6">
+                                        <p class="mb-2">Balance used</p>
+                                        <h5><span id="balance_used"></span></h5>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End col -->
+                    <!-- Start col -->
+                    <div class="col-md-12 col-lg-12 col-xl-5">
+                        <div class="card m-b-30">
+                            <div class="card-header">                                
+                                <div class="row align-items-center">
+                                    <div class="col-6">
+                                        <h5 class="card-title mb-0">Service</h5>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul class="list-inline-group text-right mb-0 pl-0">
+                                            <li class="list-inline-item">
+                                                  
+                                            </li>
+                                        </ul>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-md-7">
+                                        <div id="service"></div>
+                                    </div>
+                                    <div class="col-md-5">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End col -->
+                    <!-- Start col -->
+                    <div class="col-md-6 col-lg-6 col-xl-2">
+                        <div class="card m-b-30 text-white bg-primary">
+                            <div class="card-header">
+                                <h5 class="card-title text-white mb-0">Active User</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <p class="dash-social-icon"><i class="feather icon-user"></i></p>
+                                        <h3 class="text-white mb-4"><span id="active_user"></span></h3>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-12">
+                                        <p class="text-white text-center mb-0">User</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End col -->
+                    <!-- Start col -->
+                    <div class="col-md-6 col-lg-6 col-xl-2">
+                        <div class="card m-b-30 text-white bg-primary">
+                            <div class="card-header">
+                                <h5 class="card-title text-white mb-0">Inactive User</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <p class="dash-social-icon"><i class="feather icon-user"></i></p>
+                                        <h3 class="text-white mb-4"><span id="inactive_user"></span></h3>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-12">
+                                        <p class="text-white text-center mb-0">User</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End col -->
+                    <!-- Start col -->
+                    <div class="col-md-12 col-lg-12 col-xl-12">
+                        <div class="card m-b-30">
+                            <div class="card-header">                                
+                                <div class="row align-items-center">
+                                    <div class="col-6">
+                                        <h5 class="card-title mb-0">Notification</h5>
+                                    </div>
+        
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-borderless mb-2">
+                                        <tbody>
+                                            <tr>
+                                                <td> <div class="alert alert-info"><strong><i class="ion-information-circled"></i> 2020-03-14</strong><br>Cheapest Price On All Service. ^_^.</div> </td>
+                                            </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End col -->
+                    <!-- Start col -->
+                    
+                    <!-- End col -->
+                </div>
+                <!-- End row -->
+            </div>
+            <!-- End Contentbar -->
+            <!-- Start Footerbar -->
+            <div class="footerbar">
+                <footer class="footer">
+                    <p class="mb-0">© 2019 Theta - All Rights Reserved.</p>
+                </footer>
+            </div>
+            <!-- End Footerbar -->
+        </div>
+        <!-- End Rightbar -->
+    </div>
+
+
+                                <div aria-live="polite" aria-atomic="true">
+                                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 30px; right: 30px;" id="socket-notif">
+                                        <div class="toast-header">
+                                            <i class="feather icon-alert-triangle text-danger mr-2"></i>  
+                                            <span class="toast-title mr-auto">Bootstrap</span>
+                                            <small>11 mins ago</small>
+                                        </div>
+                                        <div class="toast-body">
+                                        Hello, world! This is a toast message.
+                                        </div>
+                                    </div>
+                                </div>
+    
+
+@include('v1.foot')
+
+
+<script>
+
+    $('document').ready(function(){
+
+       render_top_used_balance();
+        
+
+    });
+
+
+    function render_top_used_balance()
+        {
+            var url = "/data/topuser";
+            var username = new Array();
+            var balance = new Array();
+            $.get(url, function(response){
+            response.forEach(function(data){
+                username.push(data.username);
+                balance.push(data.balance);
+            });
+            console.log("RENDER GRAFIK")
+            var ctx = document.getElementById("top-user").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels:username,
+                      datasets: [{
+                          label: 'User Balance',
+                          data: balance,
+                          backgroundColor: '#3498db',
+                          
+                      }]
+                  },
+                  
+                options: {
+        
+                    responsive: true,
+                    maintainAspectRatio: true, 
+                    aspectRatio : 2,
+                   
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: false
+                    },
+                    scales: {
+                    xAxes: [{
+                        display: false,       
+                        gridLines: {
+                            color: '#e9eff9',
+                            lineWidth: 0,
+                            borderDash: [3]
+                        }
+                    }],
+                    yAxes: [{
+                    	display: false,
+                        gridLines: {
+                            color: '#e9eff9',
+                            lineWidth: 1,
+                            borderDash: [3]
+                        },
+		              	
+                    }],
+                    },
+                    
+                }
+              });
+          });
+        }
+</script>
+
