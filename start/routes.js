@@ -37,5 +37,15 @@ Route.get('/account/register','UiController.register')
 |
 */
 
-Route.get('/admin/dashboard','AdminController.Dashboard')
-Route.get('/data/topuser','AdminController.getTopUser')
+Route.group(() => {
+
+Route.get('admin/dashboard','AdminController.Dashboard')
+Route.get('admin/data/topuser','AdminController.getTopUser')
+Route.get('admin/data/topbalance','AdminController.getUserBalance')
+Route.get('admin/data/ordercount','AdminController.getOrderHistory')
+Route.get('admin/data/balance','AdminController.getWalletBalance')
+Route.get('admin/data/service','AdminController.getService')
+Route.get('admin/data/getuser','AdminController.getUser')
+Route.get('admin/data/notification','AdminController.getNotification')
+
+}).middleware('adminAuth')

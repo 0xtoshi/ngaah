@@ -19,6 +19,7 @@ class OrderHistorySchema extends Schema {
       table.bigInteger('end').nullable()
       table.enum('status',['Pending','Processing','In Progress','Partial','Completed','Cancelled'])
       table.integer('refund').nullable()
+      table.string('datetime', 30)
       table.timestamps()
     })
   }

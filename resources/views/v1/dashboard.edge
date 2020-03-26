@@ -44,12 +44,12 @@
                                 <img src="/assets/images/svg-icon/dashboard.svg" class="img-fluid" alt="layouts"><span>Admin</span><i class="feather icon-chevron-right pull-right"></i>
                             </a>
                             <ul class="vertical-submenu">
-                                <li><a href="admin/dashboard"><i class="mdi mdi-circle"></i>Dashboard</a></li> 
-                                <li><a href="admin/userman"><i class="mdi mdi-circle"></i>Userman</a></li>
-                                <li><a href="admin/serviceman"><i class="mdi mdi-circle"></i>Serviceman</a></li>
-                                <li><a href="admin/orderman"><i class="mdi mdi-circle"></i>Orderman</a></li>
-                                <li><a href="admin/balanceman"><i class="mdi mdi-circle"></i>Balanceman</a></li>
-                                <li><a href="admin/notificationman"><i class="mdi mdi-circle"></i>Notificationman</a></li> 
+                                <li><a href="/admin/dashboard"><i class="mdi mdi-circle"></i>Dashboard</a></li> 
+                                <li><a href="/admin/userman"><i class="mdi mdi-circle"></i>Userman</a></li>
+                                <li><a href="/admin/serviceman"><i class="mdi mdi-circle"></i>Serviceman</a></li>
+                                <li><a href="/admin/orderman"><i class="mdi mdi-circle"></i>Orderman</a></li>
+                                <li><a href="/admin/balanceman"><i class="mdi mdi-circle"></i>Balanceman</a></li>
+                                <li><a href="/admin/notificationman"><i class="mdi mdi-circle"></i>Notificationman</a></li> 
                             </ul>
                         </li>                                              
                     </ul>
@@ -228,7 +228,7 @@
                                         <h5><span id="balance"></span></h5>
                                     </div>
                                     <div class="col-6 text-right">
-                                        <button onclick="get_balance();" class="btn btn-primary">Refresh</button>
+                                        <button onclick="render_balance();" class="btn btn-primary">Refresh</button>
                                     </div>
                                 </div>
                                 <div class="row align-items-center">
@@ -327,16 +327,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-borderless mb-2">
-                                        <tbody>
-                                            <tr>
-                                                <td> <div class="alert alert-info"><strong><i class="ion-information-circled"></i> 2020-03-14</strong><br>Cheapest Price On All Service. ^_^.</div> </td>
-                                            </tr>
-                                        
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <div id="notif"></div>
                             </div>
                         </div>
                     </div>
@@ -381,21 +372,80 @@
 
     $('document').ready(function(){
 
-       render_top_used_balance();
-        
+    
+        render_dashboard()    
 
     });
 
 
-    function render_top_used_balance()
+    async function render_dashboard()
+    {
+        await render_top_used_balance();
+        await render_top_balance();
+        await render_balance();
+        await render_userstatus();
+        await render_order_history();
+        await render_service();
+    }
+
+    async function render_balance()
+    {
+        $.get('/admin/data/balance',function(response){
+
+            $('span[id=balance]').html(response.balance)
+            $('span[id=balance_used]').html(response.balance_used)
+            console.log(response.balance_used)
+        });
+    }
+
+    async function render_userstatus()
+    {
+        $.get('/admin/data/getuser',function(response){
+
+            $('span[id=active_user]').html(response.active)
+            $('span[id=inactive_user]').html(response.inactive)
+            console.log(response.balance_used)
+        });
+    }
+
+    async function render_service() {
+        
+        $.get('/admin/data/notification',function(response){
+
+            $.each(response,function(key,val){
+
+                if(val.level == "Low"){
+
+                    $('div[id=notif]').append('<div class="alert alert-success"><strong>'+val.text+'</div>');
+
+                }else if(val.level == "High"){
+
+                    $('div[id=notif]').append('<div class="alert alert-danger"><strong>'+val.text+'</div>');
+
+                }else{
+
+                    $('div[id=notif]').append('<div class="alert alert-info"><strong>'+val.text+'</div>');
+
+                }
+
+            });
+
+        })
+
+    }
+
+
+
+
+    async function render_top_used_balance()
         {
-            var url = "/data/topuser";
+            var url = "/admin/data/topuser";
             var username = new Array();
-            var balance = new Array();
+            var balance_used = new Array();
             $.get(url, function(response){
             response.forEach(function(data){
                 username.push(data.username);
-                balance.push(data.balance);
+                balance_used.push(data.balance_used);
             });
             console.log("RENDER GRAFIK")
             var ctx = document.getElementById("top-user").getContext('2d');
@@ -404,9 +454,133 @@
                   data: {
                       labels:username,
                       datasets: [{
+                          label: 'Used Balance',
+                          data: balance_used,
+                          backgroundColor: '#e84393',
+                          
+                      }]
+                  },
+                  
+                options: {
+        
+                    responsive: true,
+                    maintainAspectRatio: true, 
+                    aspectRatio : 2,
+                   
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: false
+                    },
+                    scales: {
+                    xAxes: [{
+                        display: false,       
+                        gridLines: {
+                            color: '#e9eff9',
+                            lineWidth: 0,
+                            borderDash: [3]
+                        }
+                    }],
+                    yAxes: [{
+                    	display: false,
+                        gridLines: {
+                            color: '#e9eff9',
+                            lineWidth: 1,
+                            borderDash: [3]
+                        },
+		              	
+                    }],
+                    },
+                    
+                }
+              });
+          });
+        }
+
+
+        async function render_top_balance()
+        {
+            var url = "/admin/data/topbalance";
+            var username = new Array();
+            var balance = new Array();
+            $.get(url, function(response){
+            response.forEach(function(data){
+                username.push(data.username);
+                balance.push(data.balance);
+            });
+            console.log("RENDER GRAFIK")
+            var ctx = document.getElementById("top-user-balance").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels:username,
+                      datasets: [{
                           label: 'User Balance',
                           data: balance,
-                          backgroundColor: '#3498db',
+                          backgroundColor: '#00b894',
+                          
+                      }]
+                  },
+                  
+                options: {
+        
+                    responsive: true,
+                    maintainAspectRatio: true, 
+                    aspectRatio : 2,
+                   
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: false
+                    },
+                    scales: {
+                    xAxes: [{
+                        display: false,       
+                        gridLines: {
+                            color: '#e9eff9',
+                            lineWidth: 0,
+                            borderDash: [3]
+                        }
+                    }],
+                    yAxes: [{
+                    	display: false,
+                        gridLines: {
+                            color: '#e9eff9',
+                            lineWidth: 1,
+                            borderDash: [3]
+                        },
+		              	
+                    }],
+                    },
+                    
+                }
+              });
+          });
+        }
+
+
+        async function render_order_history()
+        {
+            var url = "/admin/data/ordercount";
+            var datetime = new Array();
+            var count = new Array();
+            $.get(url, function(response){
+            response.forEach(function(data){
+                datetime.push(data.datetime);
+                count.push(data.count);
+            });
+            console.log("RENDER GRAFIK")
+            var ctx = document.getElementById("order-history").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels:datetime,
+                      datasets: [{
+                          label: 'Date',
+                          data: count,
+                          backgroundColor: '#74b9ff',
                           
                       }]
                   },
