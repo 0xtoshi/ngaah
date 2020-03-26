@@ -11,7 +11,8 @@ const Api = use('App/Models/Api')
 
 
 const Database = use('Database')
-
+const Hash = use('Hash')
+const uuidv4 = require("uuid/v4");
 
 class AdminController {
 
@@ -120,18 +121,111 @@ class AdminController {
     async userman({view, request, session, response })
     {
 
-        var Userman = await Member.query().select('id','username','email','balance','balance_used','level','register').fetch()
-        
+        var Userman = await Member.query().select('id','username','email','balance','balance_used','level','status','register').fetch()
+        var data = Userman.toJSON()
+
+    
         return view.render('v1.userman',{
 
             title : "Ngaah - Userman",
-            data : Userman,
+            data : data,
             dataTables : true
 
         })
+        
+
+    }
+
+    async UpdateData({request, response})
+    {
+
+        const rules = {
+            username : 'required|min:5|max:8',
+            email : 'required|email|min:5|max:30',
+            level : 'required',
+            status : 'required',
+            balance : 'required',
+        }
+
+        const validation = await validate(request.all(), rules)
+
+        if (validation.fails()) {
+            return await response.status(400).send(validation.messages())
+        }
+
+        var req = await request.all();
+
+        const member = new Member()
+
+        member.username     = req.username
+        member.email        = req.email
+        member.balance      = req.balance
+        member.level        = req.level
+        member.status       = req.status
+
+        await member.save()
+
+        return await response.status(200).send([{
+            'error' : false,
+            'message' : 'Data Sucessfully Update!!'
+        }])
 
     }
     
+
+    async UpdatePassword({request, response})
+    {
+
+        const rules = {
+            username : 'required|min:5|max:8',
+            password : 'required|min:5|max:12'
+        }
+        
+        const validation = await validate(request.all(), rules)
+
+        if (validation.fails()) {
+            return await response.status(400).send(validation.messages())
+        }
+
+        var req = await request.all();
+
+        const member = new Member()
+
+        member.username     = req.username
+        member.password      = await Hash.make(req.password)
+
+        await member.save()
+
+        return await response.status(200).send([{
+            'error' : false,
+            'message' : 'Data Sucessfully Update!!'
+        }])
+
+    }
+
+    async DeleteUser({request, response})
+    {
+
+        const rules = {
+            username : 'required|min:5|max:8',
+        }
+        
+        const validation = await validate(request.all(), rules)
+
+        if (validation.fails()) {
+            return await response.status(400).send(validation.messages())
+        }
+
+        var req = await request.all();
+
+        await Member.query().where('username',req.username).delete()
+
+        return await response.status(200).send([{
+            'error' : false,
+            'message' : 'Delete User Sucessfully'
+        }])
+
+    }
 
 }
 

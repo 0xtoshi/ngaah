@@ -98,7 +98,7 @@ class UserController {
         member.password     = await Hash.make(req.password)
         member.balance      = 0
         member.level        = 'Member'
-        member.register     = await new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')
+        member.register     = await new Date().toISOString().slice(0,10);
         member.balance_used = 0
         member.kode         = await uuidv4()
         member.status       = 'Tidak Aktif'

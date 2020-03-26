@@ -48,5 +48,8 @@ Route.get('admin/data/service','AdminController.getService')
 Route.get('admin/data/getuser','AdminController.getUser')
 Route.get('admin/data/notification','AdminController.getNotification')
 Route.get('admin/userman','AdminController.userman')
+Route.post('admin/update/userdata','AdminController.UpdateData')
+Route.post('admin/update/userpassword','AdminController.UpdatePassword')
+Route.post('admin/delete/user','AdminController.DeleteUser')
 
 }).middleware('adminAuth')

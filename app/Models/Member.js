@@ -10,7 +10,7 @@ class Member extends Model {
     }
 
     static get hidden () {
-        return ['id']
+        
     }
 
 }

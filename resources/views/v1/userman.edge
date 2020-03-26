@@ -161,8 +161,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <h6 class="card-subtitle">With DataTables you can alter the ordering characteristics of the table at initialisation time.</h6>
-                                    <div class="table-responsive">
+                                  <div class="table-responsive">
                                         <table id="default-datatable" class="display table table-striped table-bordered">
                                             <thead>
                                                 <tr>
@@ -172,16 +171,30 @@
                                                     <th>Balance</th>
                                                     <th>Balance Used</th>
                                                     <th>Level</th>
+                                                    <th>Status</th>
                                                     <th>Registered</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 
+                                                <script> console.log('{{data}}') </script>
                                                 @each(username in data)
+                                                   
+
+                                                
                                                 <tr>
-                                                    <td> {{username}}</td>
+                                                    <td> {{username.id}}</td>
+                                                    <td> {{username.username}}</td>
+                                                    <td> {{username.email}}</td>
+                                                    <td> {{username.balance}}</td>
+                                                    <td> {{username.balance_used}}</td>
+                                                    <td> {{username.level}}</td>
+                                                    <td> {{username.status}}</td>
+                                                    <td> {{username.register}}</td>
+                                                    <td> </td>
                                                 </tr>
+                                                    
                                                 @endeach
                                                 
                                         </table>
@@ -200,7 +213,8 @@
 
 <script>
 $('#datatable').DataTable({
-        responsive: true
+        responsive: true,
+        pageLength : 20
     });
    
 </script>
