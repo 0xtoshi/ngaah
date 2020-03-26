@@ -68,10 +68,6 @@ $(document).ready(function() {
     mediaSize();
     window.addEventListener('resize', mediaSize, false);
     /* -- Switchery -- */
-    var night_mode = document.querySelector('.js-switch-night-mode');
-    var switchery = new Switchery(night_mode, { color: '#944dff', size: 'small' });
-    var navigation_sidebar = document.querySelector('.js-switch-navigation-sidebar');
-    var switchery = new Switchery(navigation_sidebar, { color: '#944dff', size: 'small' });
     /* -- Bootstrap Popover -- */
     $('[data-toggle="popover"]').popover();
     /* -- Bootstrap Tooltip -- */

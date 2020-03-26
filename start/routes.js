@@ -47,5 +47,6 @@ Route.get('admin/data/balance','AdminController.getWalletBalance')
 Route.get('admin/data/service','AdminController.getService')
 Route.get('admin/data/getuser','AdminController.getUser')
 Route.get('admin/data/notification','AdminController.getNotification')
+Route.get('admin/userman','AdminController.userman')
 
 }).middleware('adminAuth')

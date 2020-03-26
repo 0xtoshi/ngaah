@@ -22,7 +22,7 @@ class AdminController {
         * Created By Ngaah.id
         */
 
-        return view.render('v1.dashboard',{
+        return await view.render('v1.dashboard',{
 
             title : 'Ngaah Dashboard'
 
@@ -114,6 +114,21 @@ class AdminController {
 
         var notification = await Notifikasi.query().select('text','level').where('active',1).fetch()
         return response.status(200).json(notification)
+
+    }
+
+    async userman({view, request, session, response })
+    {
+
+        var Userman = await Member.query().select('id','username','email','balance','balance_used','level','register').fetch()
+        
+        return view.render('v1.userman',{
+
+            title : "Ngaah - Userman",
+            data : Userman,
+            dataTables : true
+
+        })
 
     }
     
